@@ -15,6 +15,7 @@ public class ConexionJDBC {
 	static Connection conexion = null;
 	static ResultSet resultado = null;
 	
+	
 	public static Connection crearConexion() throws ClassNotFoundException, SQLException{
 	Class.forName("org.postgresql.Driver");
 	conexion = DriverManager.getConnection(URL, USER, PASS);

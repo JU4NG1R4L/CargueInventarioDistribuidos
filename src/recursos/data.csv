@@ -1,11 +1,11 @@
 product_id,product_name,product_price,category,discount,store_id,store_name
-1,Two Days,$59.08,Drama,95,1,Oozz
+1,Two Days,$59.08,Drama,95,1, Zoonoodle
 2,Dance with the Devil (Perdita Durango),$65.59,Horror,33,2,Zoonoodle
 3,Little Dorrit,$41.53,Musical,22,3,Edgepulse
-4,Dhoom,$71.19,Thriller,50,4,Youbridge
+4,Dhoom,$71.19,Thriller,50,4, Zoonoodle
 5,I Am Curious (Blue) (Jag är nyfiken - en film i blått),$55.56,Horror,83,5,Jaxbean
 6,Possession,$47.08,Horror,86,6,Topiclounge
 7,Lethal Weapon 4,$24.79,Drama,17,7,Zoombox
 8,I Was an Adventuress,$42.92,Musical,47,8,Zava
 9,Opera,$15.53,Drama,98,9,Skaboo
-10,Diary of a Nymphomaniac (Diario de una Ninfómana),$47.55,Action,28,10,Oyoba
+10,Diary of a Nymphomaniac (Diario de una Ninfómana),$47.55,Action,28,10, Zoonoodle
