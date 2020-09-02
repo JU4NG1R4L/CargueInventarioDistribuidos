@@ -21,7 +21,7 @@ public class ConexionJDBC {
 	conexion = DriverManager.getConnection(URL, USER, PASS);
 	if (conexion != null){
 	sentencia = conexion.createStatement();
-	
+	crearTablas();
 	return conexion;
 	}
 	return null;
@@ -56,5 +56,59 @@ public class ConexionJDBC {
 			}
 		}
 	}
+	
+	private static void crearTablas() {
+		try {
+			
+			String query = "DROP TABLE IF EXISTS product_stores;\n" + 
+					"DROP TABLE IF EXISTS products;\n" + 
+					"DROP TABLE IF EXISTS category;\n" + 
+					"DROP TABLE IF EXISTS store;\n" + 
+					"\n" + 
+					"CREATE TABLE category\n" + 
+					"(\n" + 
+					"	category_id INT NOT NULL GENERATED ALWAYS AS IDENTITY,\n" + 
+					"	category_name varchar(250) unique,\n" + 
+					"	primary key (category_id)\n" + 
+					");\n" + 
+					"\n" + 
+					"CREATE TABLE store\n" + 
+					"(\n" + 
+					"	store_id int,\n" + 
+					"	store_name varchar(250),\n" + 
+					"	primary key (store_id)\n" + 
+					");\n" + 
+					"\n" + 
+					"CREATE TABLE products\n" + 
+					"(\n" + 
+					"	product_id int primary key,\n" + 
+					"	product_name varchar(250),\n" + 
+					"	category_id int,\n" + 
+					"	CONSTRAINT fk_category\n" + 
+					"    FOREIGN KEY(category_id) \n" + 
+					"	REFERENCES category(category_id)\n" + 
+					");\n" + 
+					"\n" + 
+					"CREATE TABLE product_stores\n" + 
+					"(\n" + 
+					"	product_id int,\n" + 
+					"	product_price varchar(250),\n" + 
+					"	store_id int,\n" + 
+					"	CONSTRAINT fk_product\n" + 
+					"      FOREIGN KEY(product_id) \n" + 
+					"	  REFERENCES products(product_id),\n" + 
+					"	CONSTRAINT fk_store\n" + 
+					"      FOREIGN KEY(store_id) \n" + 
+					"	  REFERENCES store(store_id)\n" + 
+					");";
+			ConexionJDBC.sentencia.execute(query);
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 }
