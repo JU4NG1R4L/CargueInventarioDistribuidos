@@ -60,7 +60,7 @@ public class Inventario {
 		String[]campos=null;
 		int size = 2000;
         try {
-            bufferLectura = new BufferedReader(new FileReader("/Users/ju4ng1r4l/eclipse-workspace/CargueInventarioDistribuido/src/recursos/cargue.csv"));
+            bufferLectura = new BufferedReader(new FileReader("./src/recursos/cargue.csv"));
             String linea = bufferLectura.readLine();
             linea = bufferLectura.readLine();
             int i = 0;
