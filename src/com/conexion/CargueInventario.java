@@ -1,8 +1,9 @@
 package com.conexion;
 
 import java.sql.SQLException;
+import java.util.concurrent.Callable;
 
-public class CargueInventario implements Runnable{
+public class CargueInventario implements Callable<Boolean>{
 	
 	private String[] registros;
 	
@@ -14,9 +15,9 @@ public class CargueInventario implements Runnable{
 	}
 
 
-	private void insert(String registros[]) {
-		
-		
+	private boolean insert(String registros[]) {
+		boolean isFinish = false;
+
 		for (int i = 0; i < registros.length; i++) {
 			
 			String campos[] = registros[i].split(",");
@@ -38,12 +39,16 @@ public class CargueInventario implements Runnable{
 			
 		}
 		
+		isFinish = true;
+		
 		try {
-			Thread.sleep((long)Math.random()*1000);
+			Thread.sleep(1000);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		
+		return isFinish;
 		
 	}
 	
@@ -103,9 +108,11 @@ public class CargueInventario implements Runnable{
 		}
 	}
 
+
 	@Override
-	public void run() {
+	public Boolean call() throws Exception {
 		// TODO Auto-generated method stub
-		insert(registros);
+		return insert(registros);
 	}
+
 }
