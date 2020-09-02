@@ -5,7 +5,9 @@ Buenas noches!
 Para la conexion a la base de datos - Clase Conexion JDBC
 
   static final String URL = "jdbc:postgresql://localhost:5432/(NOMBRE_BASE_DE_DATOS)";
+  
 	static final String USER = "(USUARIO)";
+	
 	static final String PASS = "(CONTRASEÑA)";
  
 Para la configuración del archivo por bloques - Clase Inventario
