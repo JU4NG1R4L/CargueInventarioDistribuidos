@@ -66,6 +66,6 @@ CREATE TABLE product_stores
 *-------------------------------------
 
 
-NOTA: Quedo con una duda profe con el ejercicio, me gustaría solucionarlo una vez calificado, no deseo quedarme con el error
+NOTA: Al trabajar en conjunto pero con proyectos independientes, quedamos con una duda profe con el ejercicio, nos gustaría solucionarlo una vez calificado, no deseamos quedarnos con la intriga y ese detalle. Hablo por los chicos de la asesoría 
 
 Gracias!
