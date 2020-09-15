@@ -26,7 +26,7 @@ public class CalculatorRequester implements Callable<Double>{
 
   //TODO: este metodo es el que se debe llamar para hacer el calculo concurrente.
   public double execute() throws IOException {
-    System.out.println("execute %s".format(node.toString()));
+    System.out.println(String.format(node.toString()));
 
     String ip = node.get("ip");
     int port = Integer.valueOf(node.get("port"));

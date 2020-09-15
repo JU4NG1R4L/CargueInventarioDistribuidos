@@ -35,7 +35,7 @@ public class CalculateRequest implements Runnable{
    * @throws Exception
    */
   public double executeCommand(String command, String payload) throws Exception {
-    System.out.println("executeCommand %s, %s".format(command, payload));
+    System.out.println(String.format(command, payload));
 
     double numbers[] = Utils.stringToNumbers(payload);
     int blockCount = numbers.length / BLOCK_SIZE;
